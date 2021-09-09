@@ -1,6 +1,8 @@
 var path = require('path');
 
 module.exports = {
+    //tell Webpack to generate src maps
+    devtool: 'inline-source-map',
     //entry point of app
     entry: './src/index.js',
     //put the output of the bundling process at this place
