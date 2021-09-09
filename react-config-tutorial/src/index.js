@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 /*
  *component Welcome
  *using class syntax from ES6
@@ -7,7 +7,7 @@ import ReactDOM from "react-dom";
  */
 class Welcome extends React.Component {
   render() {
-      return <h1>react-config-tutorial</h1>;
+    return <h1>react-config-tutorial</h1>;
   }
 }
-ReactDOM.render(<Welcome />, document.getElementById("root"));
+ReactDOM.render(<Welcome />, document.getElementById('root'));
