@@ -20,11 +20,15 @@ module.exports = {
     },
     module: {
 	rules: [
-	    //use babel-loader to transpile these file types
 	    {
 		test: /\.(js|jsx)$/,
 		exclude: /node_modules/,
-		use: ['babel-loader']
+		use: [
+		    //use babel-loader to transpile these file types
+		    'babel-loader',
+		    //use esling-loader to hook JavaScript linter ESLint into Webpack
+		    'eslint-loader'
+		]
 	    }
 	]
     },
