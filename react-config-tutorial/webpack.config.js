@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
     //entry point of app
     entry: './src/index.js',
@@ -7,9 +9,12 @@ module.exports = {
 	publicPath: '/',
 	filename: 'bundle.js'
     },
+
     devServer: {
-	//tell the server to serve from this place
-	contentBase: './dist',
+	static: {
+	    //tell server to serve from this place
+	    directory: path.join(__dirname, 'public'),
+	},
     },
     module: {
 	rules: [
