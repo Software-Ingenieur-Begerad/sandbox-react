@@ -1,4 +1,5 @@
-var path = require('path');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     //tell Webpack to generate src maps
@@ -40,4 +41,9 @@ module.exports = {
 	    },
 	]
     },
+    plugins: [
+	new HtmlWebpackPlugin({
+	    template: path.resolve('./index.html'),
+	}),
+    ]
 };
