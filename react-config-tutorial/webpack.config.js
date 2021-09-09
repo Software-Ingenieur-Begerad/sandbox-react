@@ -29,7 +29,15 @@ module.exports = {
 		    //use esling-loader to hook JavaScript linter ESLint into Webpack
 		    'eslint-loader'
 		]
-	    }
+	    },
+	    {
+		test: /\.less$/,
+		use: [
+		    'style-loader',
+		    'css-loader',
+		    'less-loader',
+		],
+	    },
 	]
     },
 };
