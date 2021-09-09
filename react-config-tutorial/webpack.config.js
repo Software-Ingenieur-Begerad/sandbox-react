@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     //put the output of the bundling process at this place
     output: {
-	path: __dirname + '/dist',
+	path: path.resolve(__dirname, 'build'),
 	publicPath: '/',
 	filename: 'bundle.js'
     },
@@ -15,7 +15,7 @@ module.exports = {
     devServer: {
 	static: {
 	    //tell server to serve from this place
-	    directory: path.join(__dirname, 'public'),
+	    directory: path.join(__dirname, '/build'),
 	},
     },
     module: {
