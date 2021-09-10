@@ -7,10 +7,12 @@ function axiosGet () {
 
     //send HTTP GET via axios
     axios
-        .get('https://dedriver.org/xpress')
+        .get('https://test-tarifmatrix.vbn.de:4245/fares/area/info')
         .then((response) => {
             if (response.data) {
                 console.log('axiosGet() response.data: ', response.data);
+            } else {
+                console.log('axiosGet() response.data unavailable ');
             }
         })
         .catch(function (error) {
