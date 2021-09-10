@@ -1,8 +1,22 @@
 import React from 'react';
 import './style/main.less';
+import axios from 'axios';
 
 function axiosGet () {
-    console.log('axiosGet() this: ', this);
+    console.log('axiosGet() started...');
+
+    //send HTTP GET via axios
+    axios
+        .get('https://dedriver.org/xpress')
+        .then((response) => {
+            if (response.data) {
+                console.log('axiosGet() response.data: ', response.data);
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    console.log('axiosGet() done.');
 }
 
 /*
