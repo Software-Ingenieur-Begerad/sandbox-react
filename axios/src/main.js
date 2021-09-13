@@ -6,8 +6,11 @@ function axiosGet () {
     console.log('axiosGet() started...');
 
     //send HTTP GET via axios
+    axios.defaults.baseURL = 'https://test-tarifmatrix.vbn.de:4245';
+    axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8';
+    axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     axios
-        .get('https://test-tarifmatrix.vbn.de:4245/fares/area/info')
+        .get('fares/areas/info')
         .then((response) => {
             if (response.data) {
                 console.log('axiosGet() response.data: ', response.data);
