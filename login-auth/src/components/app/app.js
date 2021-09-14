@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 
-import Home from '../home/home';
 import Dashboard from '../dashboard/dashboard';
+import Home from '../home/home';
+import Login from '../login/login';
 import Preferences from '../preferences/preferences';
 
-class App extends Component {
-    render () {
+function App () {
+    const [token, setToken] = useState();
+
+    if (!token) {
+        console.log('from App() token unavailable');
+        return <Login setToken={setToken} />;
+    } else {
+        console.log('from App() token available');
         return (
             <div className="App">
                 <header className="App-header">
