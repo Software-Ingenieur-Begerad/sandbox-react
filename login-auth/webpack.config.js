@@ -5,7 +5,7 @@ module.exports = {
     //tell Webpack to generate src maps
     devtool: 'inline-source-map',
     //entry point of app
-    entry: './src/index.js',
+    entry: ['@babel/polyfill', './src/index.js'],
     //put the output of the bundling process at this place
     output: {
 	path: path.resolve(__dirname, 'build'),
