@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/home';
+import Home from './pages/home';
 
 //since react 18
 import { createRoot } from 'react-dom/client';
