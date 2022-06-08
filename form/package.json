@@ -1,7 +1,7 @@
 {
     "private": true,
-    "name": "webpack-react",
-    "description": "example using webpack for react",
+    "name": "form",
+    "description": "form examples",
     "version": "0.0.1",
     "main": "index.js",
     "keywords": [
