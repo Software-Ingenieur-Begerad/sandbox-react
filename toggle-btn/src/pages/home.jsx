@@ -5,7 +5,6 @@ import ToggleButton from '../components/toggle-button';
 const Home = () => {
     //handle state
     const [btnState,setBtnState]=useState(false);
-    //toggle
     const toggle=()=>{
 	setBtnState((btnState)=>!btnState);
     };
