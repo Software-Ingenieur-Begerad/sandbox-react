@@ -7,7 +7,12 @@ function Download(){
 	let inputValue=null;
 	if(typeof inputElem !== 'undefined' && inputElem !== null) {
 	    inputValue=inputElem.value;
-	    const file = new Blob([inputValue], {type: 'text/plain'});
+	    const file = new Blob(
+		[inputValue],
+		{
+		    type:'text/plain;charset=utf-8'
+		}
+	    );
 	    element.href = URL.createObjectURL(file);
 	    element.download = "dloadFile.csv";
 	    document.body.appendChild(element);
