@@ -9,20 +9,13 @@ export default class FareZones extends Component {
     }
 
     componentDidMount () {
-        axios.defaults.baseURL = 'https://tarifmatrix.vbn.de:4445';
+        axios.defaults.baseURL = 'https://data.vbn.de';
         axios.defaults.headers.get['Content-Type'] =
       'application/json;charset=utf-8';
         axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 
         axios
-            .get('fares/areas/info', {
-                // Axios looks for the `auth` option, and, if it is set, formats a
-                // basic auth header for you automatically.
-                auth: {
-                    username: 'tbd',
-                    password: 'tbd'
-                }
-            })
+            .get('/data/stops')
             .then((res) => {
                 this.setState({ usersCollection: res.data });
             })
@@ -44,14 +37,20 @@ export default class FareZones extends Component {
                     <table className="table table-striped table-dark">
                         <thead className="thead-dark">
                             <tr>
-                                <td>ID</td>
-                                <td>Extern</td>
-                                <td>Type</td>
-                                <td>Intern</td>
-                                <td>Name</td>
-                                <td>Short Name</td>
-                                <td>Valid From</td>
-                                <td>Valid To</td>
+                                <td>id</td>
+                                <td>active</td>
+                                <td>lon</td>
+                                <td>lat</td>
+                                <td>stop_long_name</td>
+                                <td>stop_name</td>
+                                <td>stop_name_extern</td>
+                                <td>fare_zone_1</td>
+                                <td>fare_zone_2</td>
+                                <td>fare_zone_3</td>
+                                <td>fare_zone_4</td>
+                                <td>valid_from</td>
+                                <td>valid_until</td>
+                                <td>last_modified</td>
                             </tr>
                         </thead>
                         <tbody>{this.dataTable()}</tbody>

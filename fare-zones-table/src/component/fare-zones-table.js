@@ -6,13 +6,27 @@ class FareZonesTable extends Component {
         return (
             <tr>
                 <td>{this.props.obj.id}</td>
-                <td>{this.props.obj.extern}</td>
-                <td>{this.props.obj.type}</td>
-                <td>{this.props.obj.intern}</td>
-                <td>{this.props.obj.name}</td>
-                <td>{this.props.obj.shortName}</td>
-                <td>{this.props.obj.validFrom}</td>
-                <td>{this.props.obj.validUnit}</td>
+                <td>{this.props.obj.active ? 'true' : 'false'}</td>
+                <td>{this.props.obj.lon}</td>
+                <td>{this.props.obj.lat}</td>
+                <td>{this.props.obj.stop_long_name}</td>
+                <td>{this.props.obj.stop_name}</td>
+                <td>{this.props.obj.stop_name_extern}</td>
+                <td>{this.props.obj.fare_zone_1}</td>
+                <td>
+                    {this.props.obj.fare_zone_2 ? this.props.obj.fare_zone_2 : 'null'}
+                </td>
+                <td>
+                    {this.props.obj.fare_zone_3 ? this.props.obj.fare_zone_3 : 'null'}
+                </td>
+                <td>
+                    {this.props.obj.fare_zone_4 ? this.props.obj.fare_zone_4 : 'null'}
+                </td>
+                <td>{this.props.obj.valid_from}</td>
+                <td>
+                    {this.props.obj.valid_until ? this.props.obj.valid_until : 'null'}
+                </td>
+                <td>{this.props.obj.last_modified}</td>
             </tr>
         );
     }
