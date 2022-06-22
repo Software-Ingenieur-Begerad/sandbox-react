@@ -1,21 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
+/*controlled component: input form value controlled by React*/
 const DropDownSelect = (props) => {
-    if(props.options){
-	console.log('options len: '+props.options.length);
+    /*destructuring*/
+    const {options,name,onChange}=props;
+    if(options){
+	console.log('options len: '+options.length);
 	return(
 	<div>
-	    <strong>{props.name}</strong>:
+	    <strong>{name}</strong>:
 	    <select
-		name="{props.name}"
-		onChange={props.onChange}
+		name={name}
+		id={name}
+		className={name}
+		onChange={onChange}
+		autoFocus
 	    >
 		<option defaultValue
 		>
-		    Select {props.name}
+		    Select {name}
 		</option>
-		{props.options.map((item, index) => (
+		{options.map((item, index) => (
 		    <option key={index} value={item.id}>
 			{item.name}
 		    </option>
@@ -36,5 +42,6 @@ export default DropDownSelect
 
 DropDownSelect.propTypes = {
     name: PropTypes.string,
+    onChange: PropTypes.func,
     options: PropTypes.array,
 };

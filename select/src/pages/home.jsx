@@ -18,7 +18,16 @@ const Home = () => {
             console.log('err.message: ' + err.message);
         }
     };
-
+    const handleChange = (e) => {
+	console.log('prev chosenValue: '+chosenValue);
+        console.log('e.target.id: '+e.target.id);
+        console.log('e.target.type: '+e.target.type);
+        console.log('e.target.className: '+e.target.className);
+        console.log('e.target.tagName: '+e.target.tagName);
+        console.log('e.target.name: '+e.target.name);
+        console.log('e.target.value: '+e.target.value);
+	setChosenValue(e.target.value);
+    };
     /*this hook is run after a DOM update. Changing state migh result in an infinite loop*/
     /*hook need to be placed in body of the function component in which it is used*/
     useEffect(() => {
@@ -30,7 +39,11 @@ const Home = () => {
 
     return (
 	<>
-	    <DropDownSelect name="University" options={list}/>
+	    <DropDownSelect
+		name="Name"
+		onChange={handleChange}
+		options={list}
+	    />
 	</>
     );
 }
