@@ -1,4 +1,4 @@
-//generate an HTML5 file including all webpack bundles in the body using script tags
+//generate a HTML5 file including all webpack bundles in the body using script tags
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //path is used to resolve properly across the OS
 const path = require('path');
@@ -27,7 +27,7 @@ module.exports = {
 	extensions: ['*', '.js', '.jsx'],
     },
     plugins: [
-    // create an plugin instance so that you can use it several times anywhere
+	// create a plugin instance so that you can use it several times anywhere
 	new HtmlWebpackPlugin({
 	    title: 'Production',
 	    template: path.resolve(__dirname, "../public/index.html")
