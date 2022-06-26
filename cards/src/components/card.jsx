@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-const CardAgency = () => {
+import PropTypes from 'prop-types';
+//destructure props
+const Card = ({name}) => {
     /*store count as array in function component state*/
     /*initialise as empty array*/
     const [count, setCount] = useState(null);
@@ -11,9 +12,8 @@ const CardAgency = () => {
         try {
             /*TODO make route available using config*/
             /*TODO handle errors: https://www.valentinog.com/blog/await-react/*/
-            const count = await axios.get(
-                'https://www.v1gtfs.delfi.api.swingbe.de/table-agency-count'
-            );
+	    const address=`https://www.v1gtfs.delfi.api.swingbe.de/table-${name}-count`;
+            const count = await axios.get(address);
 
             /*set state*/
             setCount(count.data[0]['count']);
@@ -32,20 +32,11 @@ const CardAgency = () => {
     /*use an empty dependency array to ensure the hook is running only once*/
     /*TODO study dependency array: https://reactjs.org/docs/hooks-effect.html*/
     }, []);
-    if(count){
-	return(
-	    <>
-		<p>Card Agency</p>
-		<p>count: {count}</p>
-	    </>
-	);
-    }else{
-	return(
-	    <>
-		<p>Card Agency</p>
-		<p>loading...</p>
-	    </>
-	);
-    }
+    return <p>{name}: {count?count:'loading...'}</p>;
 };
-export default CardAgency;
+
+Card.propTypes = {
+    name: PropTypes.string
+};
+
+export default Card;
