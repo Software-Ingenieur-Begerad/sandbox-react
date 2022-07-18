@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
+import { Auth0Provider } from "@auth0/auth0-react";
 //TODO remove debugging
 if (process.env.NODE_ENV !== 'production') {
     console.log('development mode');
@@ -11,7 +12,9 @@ import { createRoot } from 'react-dom/client';
 const root = createRoot(document.getElementById("root"));
 //render root app
 root.render(
-    <React.StrictMode>
-	<App />
-    </React.StrictMode>
+    <Auth0Provider>
+	<React.StrictMode>
+	    <App />
+	</React.StrictMode>
+    </Auth0Provider>
 );
