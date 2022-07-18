@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 module.exports = {
     //bundle *.js from this entry point
-    entry: path.resolve(__dirname, '../src/index.js'),
+    entry: path.resolve(__dirname, '../app/index.js'),
     //create output file to be linked to index.html
     output: {
         filename: '[name].bundle.js',
@@ -18,7 +18,7 @@ module.exports = {
 		//test all *.jsx (e.g. React.js) using babel-loader
 		test: /\.(js|jsx)$/,
 		exclude: /node_modules/,
-		include: path.resolve(__dirname, '../src'),
+		include: path.resolve(__dirname, '../app'),
 		use: ['babel-loader'],
 	    }
 	]
