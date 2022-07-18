@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './pages/home';
 import LoginButton from './components/login-button';
+import LogoutButton from './components/logout-button';
 export default function App() {
     return (
 	<>
@@ -10,6 +11,9 @@ export default function App() {
 	    </div>
 	    <div>
 		<LoginButton />
+	    </div>
+	    <div>
+		<LogoutButton />
 	    </div>
 	</>
     );
