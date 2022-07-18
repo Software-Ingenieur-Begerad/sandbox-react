@@ -12,6 +12,11 @@ import { createRoot } from 'react-dom/client';
 const root = createRoot(document.getElementById("root"));
 //render root app
 root.render(
+    <Auth0Provider
+	domain="swingbe.eu.auth0.com"
+	clientId="0DZCL8TWnttm6zYbxmU675EmATaIEDfn"
+	redirectUri={window.location.origin}
+    >
     <Auth0Provider>
 	<React.StrictMode>
 	    <App />
