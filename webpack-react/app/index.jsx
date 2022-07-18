@@ -10,4 +10,8 @@ import { createRoot } from 'react-dom/client';
 //create root container
 const root = createRoot(document.getElementById("root"));
 //render root app
-root.render(<App />);
+root.render(
+    <React.StrictMode>
+	<App />
+    </React.StrictMode>
+);
