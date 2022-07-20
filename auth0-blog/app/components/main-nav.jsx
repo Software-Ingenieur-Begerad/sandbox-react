@@ -1,8 +1,18 @@
+import {NavLink} from "react-router-dom";
 import React from "react";
 
 const MainNav = () => (
     <div>
-	MainNav loading...
+	<NavLink
+	    to="/"
+	>
+	    Home
+	</NavLink>
+	<NavLink
+	    to="/profile"
+	>
+	    Profile
+	</NavLink>
   </div>
 );
 

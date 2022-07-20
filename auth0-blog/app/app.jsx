@@ -1,8 +1,10 @@
 import React from 'react';
+import { Route, Routes } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 
 import NavBar from "./components/nav-bar";
 import Loading from "./components/loading";
+import Profile from "./pages/profile";
 import Home from './pages/home';
 export default function App() {
     const { isLoading } = useAuth0();
@@ -13,8 +15,10 @@ export default function App() {
 	<div>
 	    <NavBar />
 	    <div>
-		<h1>Auth0 with React.js</h1>
-		<Home />
+		<Routes>
+		    <Route path="/" element={<Home/>} />
+		    <Route path="/profile" element={<Profile/>} />
+		</Routes>
 	    </div>
 	</div>
     );
