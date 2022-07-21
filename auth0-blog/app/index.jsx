@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
+
 import App from './app';
-import { BrowserRouter as Router } from "react-router-dom";
 import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
 //TODO remove debugging
 if (process.env.NODE_ENV !== 'production') {
@@ -13,9 +14,11 @@ import { createRoot } from 'react-dom/client';
 const root = createRoot(document.getElementById("root"));
 //render root app
 root.render(
-  <Router>
-    <Auth0ProviderWithHistory>
-      <App />
-    </Auth0ProviderWithHistory>
-  </Router>,
+    <React.StrictMode>
+	<BrowserRouter>
+	    <Auth0ProviderWithHistory>
+		<App />
+	    </Auth0ProviderWithHistory>
+	</BrowserRouter>
+    </React.StrictMode>
 );

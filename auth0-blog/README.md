@@ -13,3 +13,4 @@
 * [Setup Development and Production Environment for React App](https://medium.com/freestoneinfotech/setup-development-and-production-environment-for-react-app-397c4cc9e382)
 * [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
 * [Auth0 with React}(https://auth0.com/blog/complete-guide-to-react-user-authentication/)
+* [React/JavaScript +React Router 6: Authentication Code Sample](https://auth0.com/developers/hub/code-samples/spa/react-javascript/basic-authentication-with-react-router-6)
