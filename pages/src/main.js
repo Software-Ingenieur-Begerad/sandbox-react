@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+/*in v6 Switch was replaced by Routes*/
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import About from './pages/about';
 import Contact from './pages/contact';
 import Home from './pages/home';
@@ -9,11 +11,12 @@ const Main = () => {
     return (
         <>
             <Router>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
-                    <Route path="/contact" component={Contact} />
-                </Switch>
+                <Routes>
+		    {/*in v6 component prop was replaced in favor of element*/}
+                    <Route exact path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
             </Router>
         </>
     );
